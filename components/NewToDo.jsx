@@ -5,9 +5,10 @@ import {
 	TextInput,
 	TouchableOpacity,
 	StyleSheet,
+	Alert,
 } from 'react-native';
 
-import { elementStyle, btnStyles } from '../styles/elementStyle';
+import { btnStyles } from '../styles/elementStyle';
 import { contentStyle } from '../styles/contentStyle';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/slice/todo';
@@ -17,6 +18,9 @@ function NewTodo() {
 	const dispatch = useDispatch();
 
 	function generateTodo() {
+		if (todoTitle === '') {
+			return Alert.alert('Alert', 'plese write a Todo');
+		}
 		const todo = {
 			id: Date.now().toString(),
 			title: todoTitle,

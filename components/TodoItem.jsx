@@ -45,8 +45,8 @@ function TodoItem({ todo }) {
 			/>
 			<View style={todoCardStyle.actionsSection}>
 				<Switch
-					trackColor={{ false: '#767577', true: '#81b0ff' }}
-					thumbColor={todo.completed ? '#f5dd4b' : '#f4f3f4'}
+					trackColor={{ false: '#495057', true: '#8ecae6' }}
+					thumbColor={todo.completed ? '#023e8a' : '#dee2e6'}
 					ios_backgroundColor="#3e3e3e"
 					onValueChange={() => dispatch(toggleComplete(todo.id))}
 					value={todo.completed}
